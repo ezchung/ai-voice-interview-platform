@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button"
 import { Form } from "@/components/ui/form"
 import Link from "next/link"
 import { toast } from "sonner"
+import FormField from "./FormField"
 
 
 type FormType = 'sign-in' | 'sign-up';
@@ -59,7 +60,13 @@ const AuthForm = ({type} : {type: FormType}) => {
             <h3 className="text-center">Practice Job Interview with AI</h3>
             <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-6 mt-4 form">
-                    {!isSignIn && <p>Name</p>}
+                    {!isSignIn && (
+                        <FormField 
+                            control={form.control} 
+                            name="name" 
+                            label="Name" 
+                            placeholder="Your Name" />
+                    )}
                     <p>Email</p>
                     <p>Password</p>
                     {/* for button to be full length of container and centered horizontally className="w-full mx-auto" */}
