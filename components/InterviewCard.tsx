@@ -13,10 +13,11 @@ const InterviewCard = ({interviewId, userId, role, type, techstack, createdAt} :
     <div className='card-border w-[360px] max-sm:w-full min-h-96'>
       <div className='card-interview'>
         <div>
-            <div className='absolute top-0 right-9 w-fit px-4 py-2 rounded-bl-lg bg-light-600'>
-                <p className="badhe-text">{normalizeType}</p>
+            <div className='absolute top-0 right-0 w-fit px-4 py-2 rounded-bl-lg bg-light-600'>
+                <p className="badge-text">{normalizeType}</p>
             </div>
-            <Image src={getRandomInterviewCover()} alt="cover image" width={90} height={90} className='rounded-full object-fit size-[90px]'></Image>
+            <Image src={getRandomInterviewCover()} alt="cover image" width={90} height={90} 
+                className='rounded-full object-fit size-[90px]'/>
         </div>
       </div>
     </div>
