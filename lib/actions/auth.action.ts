@@ -4,7 +4,7 @@ import { auth, db } from "@/firebase/admin";
 import { error } from "console";
 import { cookies } from "next/headers";
 
-const ONE_WEEK = 60 * 60 * 24 * 7,
+const ONE_WEEK = 60 * 60 * 24 * 7
 
 export async function signUp(params: SignUpParams){
     const { uid, name, email } = params;
@@ -22,6 +22,11 @@ export async function signUp(params: SignUpParams){
         await db.collection('users').doc(uid).set({
             name, email
         })
+
+        return {
+            success: true,
+            message: 'Account Sign In Successful'
+        }
     }catch(e: any){
         console.error('Error creating a user: ', e);
 
